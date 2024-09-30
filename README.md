@@ -6,8 +6,6 @@ This project was built with [WebFlow](https://WebFlow.com). I have exported the 
 
 The reports bar charts & graphs were built with [Apex Charts](https://apexcharts.com/)
 
-The health-dashboard was originally built with WebFlow. I have separated the repo's in an effort to clean up the code in the new repo, making in more readible, efficient and scalable.
-
 This project is a work in progress. My next step is to complete the user pages / authentication then build the framework for the content management system.
 
 Please see the currently deployed site here: https://healthdashboard.webflow.io/
