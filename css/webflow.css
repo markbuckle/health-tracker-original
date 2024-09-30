@@ -68,6 +68,7 @@ html.w-mod-touch * {
 .w-inline-block {
   max-width: 100%;
   display: inline-block;
+  text-decoration: none;
 }
 .w-clearfix:before,
 .w-clearfix:after {
