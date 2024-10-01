@@ -1,4 +1,5 @@
 # Ignore specific CSS and JavaScript files
+webflow.js
 js/webflow.js
 js/webflow-long.js
 css/healthdashboard.webflow.css
