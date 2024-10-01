@@ -1,0 +1,14 @@
+# Ignore specific CSS and JavaScript files
+js/webflow.js
+js/webflow-long.js
+css/healthdashboard.webflow.css
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output
+dist/
+
+# Ignore environment variables
+.env
+
