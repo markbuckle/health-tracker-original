@@ -13,3 +13,11 @@ dist/
 # Ignore environment variables
 .env
 
+# Ignore documents
+OFL.txt
+
+# Ignore Folders
+/Images
+/Fonts
+
+
