@@ -14,10 +14,10 @@ dist/
 .env
 
 # Ignore documents
-OFL.txt
+documents/OFL.txt
 
 # Ignore Folders
-/Images
-/Fonts
+Images/
+Fonts/
 
 
