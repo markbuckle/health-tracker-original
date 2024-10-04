@@ -24,7 +24,7 @@ Other notes:
 Please see the currently deployed site here: https://healthdashboard.webflow.io/
 
 Here is the VS code folder structure I am currently using:
-<img src="https://github.com/markbuckle/health-tracker/blob/main/public/assets/folder-structure.mermaid" width=600px>
+
 ```mermaid
 graph TD;
     A[project-root] --> B[webflow-export]
