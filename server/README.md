@@ -9,3 +9,7 @@ server/: Contains all the backend code.
     server.js: Main server file.
 
     services/: Service layers for database interactions.
+
+Services are where you'll implement the business logic for interacting with your
+database. They act as an intermediary between your routes and your database
+models.
