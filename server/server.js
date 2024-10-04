@@ -1,7 +1,13 @@
 // Import the sequelize instance from the database configuration file
 const sequelize = require('../config/database');
 
+// import userRoutes from routes
+const userRoutes = require('./routes/userRoutes');
+
 // ... other imports and setup ...
+
+// integrate userRoutes from the api folder
+app.use('/api/users', userRoutes);
 
 // Synchronize all defined models to the database
 sequelize.sync({ force: false }) // 'force: false' ensures that the database is not dropped and recreated; it only creates new tables if they don't exist
