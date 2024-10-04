@@ -52,6 +52,18 @@ graph TD;
 ```
 
 Things to consider as the project scales:
+
 - Implementing a build process to optimize Webflow-exported assets.
 - Setting up environment-specific configurations.
 - Implementing server-side rendering if needed for performance or SEO.
+
+Once the folder structure is ready, install the necessary dependencies for
+PostgreSQL. This installs PostgreSQL driver, Sequelize ORM, and dotenv for
+environment variable management.
+
+```pwsh
+npm install pg sequelize dotenv
+```
+
+Create an env file in your root project to store database credentials. Be sure
+to include .env in your gitignore file.
