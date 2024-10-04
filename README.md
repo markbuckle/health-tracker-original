@@ -23,8 +23,10 @@ Other notes:
 
 Please see the currently deployed site here: https://healthdashboard.webflow.io/
 
-Things to consider as the project scales:
+Here is the VS code folder structure I am currently using:
+<img src="https://github.com/markbuckle/health-tracker/blob/main/public/assets/folder-structure.mermaid" width=600px>
 
+Things to consider as the project scales:
 - Implementing a build process to optimize Webflow-exported assets.
 - Setting up environment-specific configurations.
 - Implementing server-side rendering if needed for performance or SEO.
