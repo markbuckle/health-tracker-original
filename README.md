@@ -24,7 +24,32 @@ Other notes:
 Please see the currently deployed site here: https://healthdashboard.webflow.io/
 
 Here is the VS code folder structure I am currently using:
-<img src="public/assests/https://github.com/markbuckle/health-tracker/blob/main/public/assets/folder-structure.mermaid" width=600px>
+<img src="https://github.com/markbuckle/health-tracker/blob/main/public/assets/folder-structure.mermaid" width=600px>
+```mermaid
+graph TD;
+    A[project-root] --> B[webflow-export]
+    A --> C[server]
+    A --> D[public]
+    A --> E[src]
+    A --> F[config]
+    A --> G[scripts]
+
+    B --> B1[css/original]
+    B --> B2[js/original]
+    B --> B3[images]
+    B --> B4[index.html]
+    B --> B5[other-pages.html]
+    D --> D1[css]
+    D --> D2[js]
+    D --> D3[assets]
+    E --> E1[styles]
+    E --> E2[scripts]
+    C --> C1[routes]
+    C --> C2[models]
+    C --> C3[services]
+    C --> C4[middleware]
+    C --> C5[server.js]
+```
 
 Things to consider as the project scales:
 - Implementing a build process to optimize Webflow-exported assets.
