@@ -139,3 +139,26 @@ or fields(columns).
 
 SQL is considered the language itself. It stands for Structured Query Language.
 Every database has its own version of SQL.
+
+When creating tables, make sure to turn on primary key if you want a unique
+identifier for that table.
+
+To confirm that your PostgreSQL database is connected and the SSL is enabled, we
+can use either the psql command-line tool or pgAdmin4.
+
+** Using PSQL Command Line Tool**
+
+1. Open command prompt
+2. Connect to PostgreSQL:
+
+```cmd
+psql -h your_host -U your_username -d your_database
+```
+
+Replace your_host, your_username, and your_database with your actual PostgreSQL
+host, username, and database name. You will be prompted to enter your password.
+3. Run the query.
+
+```SQL
+SHOW ssl;
+```
