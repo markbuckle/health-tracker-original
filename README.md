@@ -67,3 +67,65 @@ npm install pg sequelize dotenv
 
 Create an env file in your root project to store database credentials. Be sure
 to include .env in your gitignore file.
+
+Install PostgreSQL and OpenSSL from their respective websites.
+
+Navigate to the directory where you want to save the certificate and key files.
+For PostgreSQL, this is typically the data directory, but you can generate them
+anywhere and move them later. Run the following command as an administrator to
+generate both the certificate and key in one step:
+
+```pwsh
+$openssl = 'C:\Program Files\OpenSSL-Win64\bin\openssl.exe'
+```
+
+```pwsh
+& $openssl req -new -x509 -days 365 -nodes -text -out server.crt -keyout server.key -subj "/CN=localhost" -config 'C:\Program Files\OpenSSL-Win64\bin\cnf\openssl.cnf'
+```
+
+Let's break down this command:
+
+<li> req: This is the command for X.509 Certificate Signing Request (CSR) management.</li>
+<li> -new: Creates a new certificate request.</li>
+<li> -x509: Outputs a self-signed certificate instead of a certificate request.</li>
+<li> -days 365: The number of days the certificate will be valid.</li>
+<li> -nodes: Creates a key without a passphrase.</li>
+<li> -text: Outputs the certificate in plain text.</li>
+<li> -out server.crt: Specifies the output filename for the certificate.</li>
+<li> -keyout server.key: Specifies the output filename for the private key.</li>
+<li> -subj "/CN=localhost": Sets the subject of the certificate. Replace "localhost" with your server's domain name if applicable.</li>
+
+Check your /data folder or run the following to verify that the following files
+were created:
+
+```pwsh
+Get-ChildItem server.crt, server.key
+```
+
+you can now update your postgresql.conf file with the paths to these files. Add
+or modify these lines in postgresql.conf:
+
+```config
+ssl = on
+ssl_cert_file = 'server.crt'
+ssl_key_file = 'server.key'
+```
+
+** At this point we have a self-signed certificate, which is fine for
+development or testing purposes. For a production environment, especially one
+handling sensitive medical data, you should obtain a certificate from a trusted
+Certificate Authority (CA). **
+
+Restarting your PostgreSQL service is an important step to apply the changes
+we've made. Here's how you can do it on Windows:
+
+Using the Services application: a. Press Win + R to open the Run dialog. b. Type
+"services.msc" and press Enter. c. Scroll down to find the PostgreSQL service.
+It will likely be named something like "postgresql-x64-17" (where 17 is your
+version number). d. Right-click on the service and select "Restart".
+
+Next install
+[pgAdmin](https://www.postgresql.org/ftp/pgadmin/pgadmin4/v8.12/windows/) from
+the website. pgAdmin is a powerful, open-source tool designed for managing
+PostgreSQL databases. PgAdmin4 is a complete rewrite of pgAdmin, built using
+Python and Javascript/jQuery.
