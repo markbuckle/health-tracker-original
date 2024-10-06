@@ -116,6 +116,18 @@ development or testing purposes. For a production environment, especially one
 handling sensitive medical data, you should obtain a certificate from a trusted
 Certificate Authority (CA). **
 
+You can also generate a development / internal use CA using OpenSSL. Run the
+following in your terminal or command prompt. Change the folder location to
+where you want this saved. It my case it was the postgres folder: C:\Program
+Files\PostgreSQL\17
+
+```pwsh
+openssl genpkey -algorithm RSA -out ca.key
+openssl req -new -x509 -key ca.key -out ca.crt -days 365 -subj "/CN=My CA" -config "C:\Program Files\OpenSSL-Win64\openssl.cnf"
+```
+
+This will create ca.key (the private key) and ca.crt (the CA certificate).
+
 Restarting your PostgreSQL service is an important step to apply the changes
 we've made. Here's how you can do it on Windows:
 
