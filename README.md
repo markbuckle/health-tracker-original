@@ -129,3 +129,13 @@ Next install
 the website. pgAdmin is a powerful, open-source tool designed for managing
 PostgreSQL databases. PgAdmin4 is a complete rewrite of pgAdmin, built using
 Python and Javascript/jQuery.
+
+Note: In database terms, rows are "records" and columns are "fields".
+
+Any database, whether it's PostgreSQL or MySQL, is just a container for your
+tables. Updates are made to the database itself, they are made to the tables.
+And what you are really doing with the table is something with the records(rows)
+or fields(columns).
+
+SQL is considered the language itself. It stands for Structured Query Language.
+Every database has its own version of SQL.
