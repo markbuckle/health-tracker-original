@@ -20,4 +20,7 @@ documents/OFL.txt
 images/
 fonts/
 
+# Ignore VS code folder
+.vscode/
+
 
