@@ -24,9 +24,9 @@ require('dotenv').config();
                 ssl: {
                     require: true, // Enforce SSL
                     rejectUnauthorized: true, // Ensures the server certificate is verified against the list of supplied CAs
-                    ca: process.env.SSL_CA, // Path to the CA certificate
-                    key: process.env.SSL_KEY, // Path to the client key
-                    cert: process.env.SSL_CERT // Path to the client certificate
+                    ca: fs.readFileSync(process.env.SSL_CA).toString(), // read the CA certificate
+                    key: fs.readFileSync(process.env.SSL_KEY).toString(), // read the client key
+                    cert: fs.readFileSync(process.env.SSL_CERT).toString() // read the client certificate
                 }
             }
    });

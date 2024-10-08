@@ -174,3 +174,14 @@ host, username, and database name. You will be prompted to enter your password.
 ```SQL
 SHOW ssl;
 ```
+
+## User Authentication
+
+Now that the database is established and connected, the next step is to setup
+our user authentication with Passport.js and JWT.
+
+Install necessary packages: In your project root, run:
+
+```pwsh
+npm install passport passport-jwt passport-local jsonwebtoken bcrypt
+```
