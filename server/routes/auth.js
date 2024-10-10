@@ -1,3 +1,5 @@
+// server-side authentication.  It defines the API endpoints for registration and login. This file should remain on your server and be used as part of your Express.js application.
+
 const express = require('express'); // Express framework for building web applications
 const passport = require('passport'); // Passport for authentication
 const jwt = require('jsonwebtoken'); // JSON Web Token for creating and verifying tokens
