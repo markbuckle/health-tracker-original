@@ -2,7 +2,7 @@
 <html data-wf-page="6607e93606f6bdfff24355d6" data-wf-site="6606de22e8c152e6b19be98a">
 <head>
   <meta charset="utf-8">
-  <title>Personalized Health Dashboard</title>
+  <title>Login</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -25,18 +25,33 @@
       <h2 class="heading-5">Sign In</h2>
       <div class="form-wrap">
         <div class="log-in-form-block w-form">
-          <form id="email-form" name="email-form" data-name="Email Form" method="get" data-ms-form="login" class="log-in-form" data-wf-page-id="6607e93606f6bdfff24355d6" data-wf-element-id="52c07e07-24e3-d724-d1fc-52915f71659b">
+          <form id="login-form" class="log-in-form">
+            <div class="field-block">
+              <label for="Email" class="field-label-2">Email</label>
+              <input class="form-field w-input" maxlength="256" name="email" type="email" id="Email" required>
+            </div>
+            <div class="field-block">
+              <label for="password" class="field-label-2">Password<span class="text-red"></span></label>
+              <div class="password-wrap">
+                <input class="form-field w-input" maxlength="256" name="password" type="password" id="password" required>
+                <img id="eye-open" alt="" src="images/eye-open.svg" loading="lazy" class="eye-open">
+                <img id="eye-close" alt="" src="images/eye-close.svg" loading="lazy" class="eye-close">
+              </div>
+            </div>
+            <button type="submit" class="submit w-button" value="Sign In">Sign In</button>
+            <a data-ms-auth-provider="google" href="#" class="button-7 w-inline-block"><img loading="lazy" src="images/google.svg" alt="">
+              <p class="paragraph-7">Sign In With Google</p>
+            </a>
+            <div class="w-users-userformfooter"><span class="text-span-10">Don't have an account?</span>
+              <a href="sign-up.html" class="link-block-5 w-inline-block">Sign Up</a>
+            </div>
+          </form>
+          <!-- <form id="email-form" name="email-form" data-name="Email Form" method="get" data-ms-form="login" class="log-in-form" data-wf-page-id="6607e93606f6bdfff24355d6" data-wf-element-id="52c07e07-24e3-d724-d1fc-52915f71659b">
             <div class="field-block"><label for="Email" class="field-label-2">Email</label><input class="form-field w-input" maxlength="256" name="Email" data-name="Email" placeholder="" type="email" id="Email" data-ms-member="email" required=""></div>
             <div class="field-block"><label for="name" class="field-label-2">Password<span class="text-red"></span></label>
               <div class="password-wrap"><input class="form-field w-input" maxlength="256" name="password" data-name="Password" placeholder="" type="password" id="password" data-ms-member="password" required=""><img data-w-id="52c07e07-24e3-d724-d1fc-52915f7165a9" id="eye-open" alt="" src="images/eye-open.svg" loading="lazy" class="eye-open"><img data-w-id="52c07e07-24e3-d724-d1fc-52915f7165aa" id="eye-close" alt="" src="images/eye-close.svg" loading="lazy" class="eye-close"></div>
             </div><input type="submit" data-wait="Please wait..." class="submit w-button" value="Sign In">
-            <a data-ms-auth-provider="google" href="#" class="button-7 w-inline-block"><img loading="lazy" src="images/google.svg" alt="">
-              <p class="paragraph-7">Sign In With Google</p>
-            </a>
-            <div class="w-users-userformfooter"><span class="text-span-10">Don&#x27;t have an account?</span>
-              <a href="sign-up.html" class="link-block-5 w-inline-block">Sign Up</a>
-            </div>
-          </form>
+          </form> -->
           <div class="w-form-done">
             <div>Thank you! Your submission has been received!</div>
           </div>
@@ -55,5 +70,6 @@
   <script src="js/webflow.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="js/auth.js" type="text/javascript"></script>
 </body>
 </html>
