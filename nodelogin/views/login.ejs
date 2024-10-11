@@ -14,21 +14,9 @@
     <h1>Login</h1>
 
     <ul>
-      <% if (typeof errors != 'undefined') { %> <% errors.forEach(error => { %>
-      <li><%= error.message %></li>
-      <% }) %> <% } %>
-    </ul>
-
-    <ul>
       <% if(messages.success_msg) { %>
-      <li><%= messages.success_msg %></li>
-      <% } %>
-    </ul>
-
-    <ul>
-      <% if (messages.error) { %>
-      <li><%= messages.error %></li>
-      <% } %>
+        <li><%= messages.success_msg %></li>
+          <% } %>
     </ul>
 
     <form action="/users/login" method="POST">

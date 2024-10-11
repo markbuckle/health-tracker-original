@@ -38,3 +38,10 @@ Install the bcryprt package to hash passwords:
 ```pwsh
 npm i bcrypt
 ```
+
+Install the express session and flash packages:
+
+```pwsh
+npm install express-session
+npm install express-flash
+```

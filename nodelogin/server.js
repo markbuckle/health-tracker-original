@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const { pool } = require('./dbConfig');
 const bcrypt = require("bcrypt");
+const session = require("express-session");
+const flash = require("express-flash");
 
 // env is the port used in production, otherwise it will be 4000
 const PORT = process.env.PORT || 4000;
@@ -9,6 +11,17 @@ const PORT = process.env.PORT || 4000;
 // middleware - tell our app to use the ejs engine
 app.set('view engine', "ejs");
 app.use(express.urlencoded({extended: false }));
+app.use(session({
+    // encrypts info we store in our session
+    secret: 'secret', 
+    // don't resave if nothing's changed
+    resave: false,
+    // don't save session details is there is no values
+    saveUninitialized: false
+}))
+
+// display our flash messages
+app.use(flash());
 
 app.get('/', (req, res)=>{
     res.render("index");
@@ -72,6 +85,21 @@ app.post('/users/register', async(req, res)=> {
                 if(results.rows.length > 0){
                     errors.push({message: "Email already registered"});
                     res.render('register', { errors });
+                } else {
+                    pool.query(
+                        `INSERT INTO users (name, email, password)
+                        VALUES ($1, $2, $3)
+                        RETURNING id, password`, 
+                        [name, email, hashedPassword], 
+                        (err, results) => {
+                            if (err){
+                                throw err;
+                            }
+                            console.log(results.rows);
+                            req.flash("success_msg", "You are now registered. Please log in");
+                            res.redirect("/users/login");
+                        }
+                    )
                 }
             }
         );
