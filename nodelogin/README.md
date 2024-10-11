@@ -45,3 +45,10 @@ Install the express session and flash packages:
 npm install express-session
 npm install express-flash
 ```
+
+Install passport. Passport will allow us to store session details into a browser
+cookie so that they can use the app as an authenticated user:
+
+```pwsh
+npm i passport passport-local
+```

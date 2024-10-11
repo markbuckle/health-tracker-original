@@ -12,10 +12,16 @@
   </head>
   <body>
     <h1>Login</h1>
-
+    <!-- store success message -->
     <ul>
       <% if(messages.success_msg) { %>
         <li><%= messages.success_msg %></li>
+          <% } %>
+    </ul>
+    <!-- store error message -->
+    <ul>
+      <% if(messages.error) { %>
+        <li><%= messages.error %></li>
           <% } %>
     </ul>
 

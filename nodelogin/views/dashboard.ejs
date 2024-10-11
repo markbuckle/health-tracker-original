@@ -15,6 +15,7 @@
 
     <a href="/users/logout">Logout</a>
 
-    <h4>Hello <%= user %></h4>
+    <!-- turn the first letter of the users name to an uppercase -->
+    <h1>Hello <%= user.charAt(0).toUpperCase() + user.slice(1) %></h1>
   </body>
 </html>
