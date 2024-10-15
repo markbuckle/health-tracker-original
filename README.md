@@ -185,3 +185,68 @@ Install necessary packages: In your project root, run:
 ```pwsh
 npm install passport passport-jwt passport-local jsonwebtoken bcrypt
 ```
+
+Install nodemon:
+
+```pwsh
+npm install -g nodemon
+```
+
+### MongoDB database
+
+Once you have MongoDB community server and shell installed, use the following
+commands:
+
+1. Connect to the server:
+
+```MongoDB Shell
+mongosh
+```
+
+2. Connect to the specific database you want to access:
+
+```MongoDB Shell
+use HealthLyncDatabase
+```
+
+3. Connect to the specific collection within that database:
+
+```MongoDB Shell
+db.users
+```
+
+4. Add a single new entries:
+
+```MongoDB Shell
+db.users.insertOne({name: "Terry Patcher", email: "terryP@gmail.com", password: "password4", confirmPassword: "password4"})
+```
+
+Add multiple entries:
+
+```MongoDB Shell
+db.users.insertMany([{...},{...},etc.])
+```
+
+5. Fetch/find data:
+
+```MongoDB Shell
+db.users.find()
+```
+
+Filter for more specific data:
+
+```MongoDB Shell
+db.users.find({name: 'Terry Patcher'})
+```
+
+or for searching multiple parameters:
+
+```MongoDB Shell
+db.users.find({name: 'Terry Patcher', email: 'terryP@gmail.com'})
+```
+
+6. To drop a database:
+
+```MongoDB Shell
+db.users.drop()
+```
