@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 // Import the userService module
-const userService = require('../services/userService');
+const userService = require('../../services/userService');
 
 // Define a POST route to create a new user
 router.post('/', async (req, res) => {

@@ -3,7 +3,7 @@
 const express = require('express'); // Express framework for building web applications
 const passport = require('passport'); // Passport for authentication
 const jwt = require('jsonwebtoken'); // JSON Web Token for creating and verifying tokens
-const User = require('../models/user'); // User model for interacting with the database
+const User = require('../../models/user'); // User model for interacting with the database
 
 // Create a new router object to handle routes.
 const router = express.Router();
@@ -12,14 +12,29 @@ const router = express.Router();
 router.post('/register', async (req, res) => { 
   try {
     // Extract user details from the request body
-    const { email, password, firstName, lastName, role } = req.body;
-    // Create a new user in the database
-    const user = await User.create({ email, password, firstName, lastName, role });
+    const { email, password, firstName, lastName, acceptCommunications } = req.body;
+    
+    // Check if user already exists
+    const existingUser = await User.findOne({ where: { email } });
+    if (existingUser) {
+      return res.status(400).json({ message: 'User with this email already exists' });
+    }
+
+    // Create new user
+    const newUser = await User.create({
+      email,
+      password, // Ensure your User model hashes this password before saving
+      firstName,
+      lastName,
+      acceptCommunications
+    });
+
     // Send a success response
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
+    console.error('Registration error:', error);
     // Send an error response if registration fails
-    res.status(400).json({ message: 'Registration failed. Please try again.', error: error.message });
+    res.status(500).json({ message: 'An error occurred during registration' });
   }
 });
 
