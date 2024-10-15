@@ -250,3 +250,22 @@ db.users.find({name: 'Terry Patcher', email: 'terryP@gmail.com'})
 ```MongoDB Shell
 db.users.drop()
 ```
+
+### Public Key Cryptography
+
+In your bash terminal, create a keyPair file as follows:
+
+```bash
+touch createKeypair.js
+```
+
+Once you have your initial cryptography code imported, run the script:
+
+```bash
+node createKeypair.js
+```
+
+This will create a private key and a public key.
+
+JWT uses public key cryptography. Check out https://jwt.io to see some JWt
+crypto libraries
