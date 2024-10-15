@@ -1,5 +1,7 @@
 ## Setup Express Server
 
+Note this folder is just to test the express and passport login configuration before implementing into our other code.
+
 Create a new folder (i.e. nodeLogin). In your terminal, initialize your json:
 
 ```pwsh
