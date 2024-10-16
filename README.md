@@ -269,3 +269,36 @@ This will create a private key and a public key.
 
 JWT uses public key cryptography. Check out https://jwt.io to see some JWt
 crypto libraries
+
+### Jason Web Tokens (JWT)
+
+A JWT is a compact, URL-safe means of transporting data on the web.
+
+There are three important components:
+
+1. Header - algorithm (ie RS256) & token type (ie JWT)
+
+2. PayLoad - meta data about some entity. In most cases it will be about a user
+   (ie user authentication data). The payload is easy to decode, so you don't
+   want to store any sensitive information here.
+
+   Claim types can be found at
+   https://datatracker.ietf.org/doc/html/rfc7519#section-4
+
+3. Signature - verify signature with public key cryptography
+
+To get started, create an issueJWT.js file. Copy and paste the JWT from
+https://jwt.io and store it as a variable. Also copy and paste the public and
+private keys into separate files (priv_key.pem and pub_key.pem).
+
+In your terminal, run:
+
+```bash
+npm install --save base64url
+```
+
+Once the code is ready, verify the JWT with:
+
+```bash
+node issueJWT.js
+```

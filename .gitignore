@@ -26,6 +26,8 @@ fonts/
 # crypto keys
 id_rsa_priv.pem
 id_rsa_pub.pem
+priv_key.pem
+pub_key.pem
 
 
 
